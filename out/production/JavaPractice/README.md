@@ -81,24 +81,4 @@ Method Overloading
 
 When we have a more than one constructor in same class it's called 
 overloading.But the arguments must be differ from each other.
-We can call constructor inside another constructor whithin same class.
 
-
-        public ConstrutorOverloading(String employeeName, int salary, String employeeId, Department dep) {
-        this(employeeName, employeeId, salary);
-        this.dep = dep;
-    }
-
-    public ConstrutorOverloading(String employeeName, String employeeId, int salary) {
-        this(employeeName, employeeId);
-        this.salary = salary;
-    }
-
-    public ConstrutorOverloading(String employeeName, String employeeId) {
-        this.employeeName = employeeName;
-        this.employeeId = employeeId;
-    }
-
-We must use this() while referring constructor.
-##this(para.) must be the first line in constructor.
-we can only refe to the same class constructor.
