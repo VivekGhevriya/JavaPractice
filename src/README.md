@@ -42,7 +42,7 @@ proper manner, such as changing the value of a variable within a specified range
 ## Getters and Setters in Array and List and use of clone()
 
 
-##Enumerations(enum)
+## Enumerations(enum)
 
 <li>when we already know the value and values are final at that time we can use enum</li>
 <li>Enum are special type of class can be created by typing
@@ -72,7 +72,7 @@ We can also se switch/case in enum
 We can add variables and method inside enum class but cannot create objects.
 
 
-##Polymorphism
+## Polymorphism
 
 Method Overloading
 
@@ -80,8 +80,8 @@ Method Overloading
 <h3>Constructor Overloading</h3>
 
 When we have a more than one constructor in same class it's called 
-overloading.But the arguments must be differ from each other.
-We can call constructor inside another constructor whithin same class.
+overloading. but the arguments must be differ from each other.
+We can call constructor inside another constructor within same class.
 
 
         public ConstrutorOverloading(String employeeName, int salary, String employeeId, Department dep) {
@@ -102,3 +102,51 @@ We can call constructor inside another constructor whithin same class.
 We must use this() while referring constructor.
 ##this(para.) must be the first line in constructor.
 we can only refe to the same class constructor.
+
+
+## Inheritance
+When one class acquire all the properties from another class ,it's called 
+inheritance.
+
+We can only inheritate public and protected properties.
+
+We can access Private properties.
+
+The class which inherits the other class called SUB CLASS(child class),
+and the class whose properties called SUPER CLASS(Parent class).
+
+When we use inheritance we have to use extends word.
+See below example
+
+
+
+
+    class Cal{
+    public int add(int a,int b){
+      return a+b;
+    }
+    }
+    class calAdv extends Cal{
+    public int Sub(int a, int b){
+    return a-b;
+    }
+    }
+    public class InheritancePractice {
+
+    public static void main(String[] args) {
+        calAdv obj1 = new calAdv();
+        System.out.println(obj1.add(5, 2));
+        System.out.println(obj1.Sub(5, 2));
+        }
+    }
+
+Here,class calAdv is a subclass of the Cal.Cal is the superclass.
+
+we have to create an object of the Subclass which is calAdv.
+
+When we create an object of the subclass we are also calling  default Construcor of the superclass.
+
+To invoke the SuperClass Constructor inside of the Subclass we can use the 
+
+<b><i>SUPER()</b></i>  keyword  and can pass the parameters.
+
