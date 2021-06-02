@@ -14,14 +14,14 @@ class Cal{
         System.out.println("This is Prameterised con"+ a);
     }
 }
-class CalAdv extends Cal{
+class CalAdv {
     public int Sub(int a, int b){
         return a-b;
     }
 
     CalAdv(){
 
-        super(2);
+
 
     }
 

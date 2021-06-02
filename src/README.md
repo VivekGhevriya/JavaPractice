@@ -110,7 +110,7 @@ inheritance.
 
 We can only inheritate public and protected properties.
 
-We can access Private properties.
+<div><p  style=color="red">We can access Private properties.</p></div>
 
 The class which inherits the other class called SUB CLASS(child class),
 and the class whose properties called SUPER CLASS(Parent class).
@@ -149,4 +149,106 @@ When we create an object of the subclass we are also calling  default Construcor
 To invoke the SuperClass Constructor inside of the Subclass we can use the 
 
 <b><i>SUPER()</b></i>  keyword  and can pass the parameters.
+
+## Packages
+
+Packages is a collection of similar type of java entities which can be classes , subclass or interface..etc
+
+
+It gives unique name of the class,we can't have same name class in same package.
+
+Package name will be in small-letters.
+
+Package name should be reverse order of the public identity(Domain name).
+  
+    //ibm.com is the public identity so package name could ne 
+    com.ibm
+
+##Package must be in first line.
+
+    package io.pragra.employee;
+
+    public class Person {
+    }
+
+## Why we need packages
+
+1. Easy to Locate 
+2. Avoid naming conflicts.
+3. Controlled the access.
+4. Reuse the class.
+
+## Two type of Packages
+1.User-Defined
+2.Built-in(java.util,java.lan,java.io)
+
+We can sub-package in Java and will be treated as  another package.
+
+Now we can learn about access modifier
+
+<table >
+<tr style="background-color:grey">
+<th>
+  </th>
+<th>Public</th><th>Private</th><th>Protected</th><th>Default</th></tr>
+<tr style="background-color:darkgrey"><th>Same class</th>
+<td>  Yes </td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr style="background-color:grey"><th>Sub class
+same packages</th>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td></tr>
+<tr style="background-color:darkgrey">
+<th>Non-Sub class same Package</th>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td></tr>
+<tr style="background-color:grey">
+<th>Sub class Different Package</th>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td></tr>
+<tr style="background-color:darkgrey">
+<th>Non-Sub class Different Package</th>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>No</td></tr>
+</table>
+ 
+In the Protected modifier While using in another package subclass we can only aceess by 
+
+Subclass Reference.
+    package io.pragra.Employee;
+    
+    public class Production {
+    
+    protected void eat(){
+    System.out.println("eating");
+    }
+    }
+
+    package io.pragra.management;
+    import io.pragra.Employee.Production;
+    public class Finance  extends Production {
+
+    public static void main(String[] args) {
+
+        Finance f1= new Finance();
+
+        f1.eat();
+    }
+    }
+
+##Relation b/w Classes
+
+1.IS-A
+
 
