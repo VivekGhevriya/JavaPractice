@@ -164,7 +164,7 @@ Package name should be reverse order of the public identity(Domain name).
     //ibm.com is the public identity so package name could ne 
     com.ibm
 
-##Package must be in first line.
+## Package must be in first line.
 
     package io.pragra.employee;
 
@@ -247,8 +247,159 @@ Subclass Reference.
     }
     }
 
-##Relation b/w Classes
+## Relation b/w Classes
 
-1.IS-A
+1.IS-A (Inheritance)
+
+When we perform inheritance means by using extends keyword
+
+
+````Java
+    Class A{
+     }
+    Class B extends A{
+    }
+
+Here we can say that "B" IS-A "A" 
+````
+## Advantages of IS-A
+1.Code reusability
+2.Reduce Redundancy
+
+Major drawback is Class A and B are tightly coupled means if I make changes in ClassA
+this will affect on Class b as well.
+
+
+2.HAS-A (Association)
+
+<li>When we have create a object of the another class inside the
+    one class is called HAS-A rel.</li>
+ 
+ 2.1 Aggregation-Weakly coupled
+ 2.2 Composition-Strongly coupled
+ 
+
+```Java
+    Class Engine{
+    }
+    Class Car{
+        String modelName;
+       Engine e= new Engine()
+    }
+```
+
+<li>Car HAS-A Engine</li>
+<li>If we make any changes inside of the Engine class doesn't affect 
+    to the Car class.That's how we can use only properties that we want.</li>
+
+<li>Inheritance is a Static binding while HAS-A dynamic binding</li>
+
+
+
+## Method Overriding
+
+<li>When we have a same name</li>
+<li>Different class</li>
+<li>Same Arguments,Same type and same argument sequence</li>
+<li>Class follow inheritance (IS-A relationship)</li>
+
+it's called Method Overloading.
+
+<li>However,we can have different return type in child class,but retun type in child class can be same or 
+    sub-type of Superclass return type .This phenomenon is known 
+    as <b><i>covariant</i></b> return type.</li>
+
+
+<li><b>Object is the Superclass of every class.</b></li>
+
+<li>The access modifier for overriding method allow more , but not less modifier in SubClass.
+
+<li><b>All the Abstract method must be override in subclass from the super class.</b></li>
+
+<li>We can call Superclass method in subclass by using SUPER.method()</li>
+
+We can achieve Dynamic polymorphism by Method Overriding.
+public class Test {
+
+    public static void main(String[] args) {
+        A a1 =new A();
+        B b1= new B();
+        System.out.println(result(a1));
+    }
+    public static String result(A obj){
+        return obj.show();
+        }
+    }
+
+Here,static method result() showing what object we are passing.
+
+We can assign to Parent reference to the child objects.
+
+        A a1 =new A();
+        A b1= new B();
+
+Here B is the subclass of the Superclass A.
+but we can only access method from the 
+
+class A for b1 we need to perform object casting.
+
+## Abstraction
+
+<li>Abstraction is hiding internal implementaion and showing only setup service that are we offering</li>
+
+<li>Ex.In Car ,we are only shown to break paddle but the internal strucure in not visible.</li>
+
+We can achieve abstraction by Abstract class and interface.
+
+1.Abstract class- When we have atleast one method without body(Abstract method)it's called Abstract Class 
+                  and we cannot create Object of the Abstract class.
+We can achieve 0-100% Abstarction.
+public abstract class AbstarctionPractice {
+
+    public abstract void abs(); 
+    public void print(){
+        System.out.println("Hello Abstraction");
+    }
+    }
+
+If a method is abstract than class must be abstract.
+
+When we inheritate(Extends) any Abstract class into another class all the Abstract method must be implement logic or else will throw an error.
+Method overriding can be achieved through extends the Abstract class.
+
+2.Interface-can achieve 100% abstraction.
+
+
+## Interface
+
+<li>It's used to achieve Abstraction</li>
+<li>It's support multiple inheritance</li>
+<li>Helped to achieve loose coupling</li>
+
+        public interface InterfacePractice {
+
+    //Everything inside interface is public
+    // Variable will be public static final
+    default void display(){
+        System.out.println("Hello Interface");
+        }
+    }
+
+### in Java 8 we can create static and default method inside of the inteface
+### in JAVA 9 we can create private method inside interface.
+We have to extends interface into the class.
+A single class can extends more than one inteface at a time.
+public class InterfacingClass  implements InterfacePractice{
+
+    @Override
+    public void print() {
+        System.out.println("Hi");
+        }
+    }
+
+Why Interface is Public?
+==>We can not create object of the interface so it must be inheritated to do that it must be public.
+
+<li>When we inhertated class and interface same time than both will be Superclass</li>
 
 
