@@ -1,3 +1,33 @@
+## What is Programming?
+-It is a set of instruction,which is written in various languages,which tell machine to perform a specific task.
+
+## JAVA
+-It is a high-level,Object-Oriented,class-based programming language.
+
+## What is High-level programming language?
+-A language easy to understand for programmer but not for machine it requires to comverts into machine understable language.
+Machine only understand binary(0's and 1's).
+
+## How to coverts high level to binary code?
+-A programme which converts Source code into MACHINE CODE.It's called Compiler or interpreter.
+
+###Compiler
+-It converts the entire code at once and execute and it is faster than interpreter.
+
+### Interpreter
+-It reads code line by line and execute it.it is slower.
+
+##  How JAVA is compiled and interpreted language?
+-It first converts(by compiler) java file(ABC.java) into byte code (ABC.class) and then interpreter reads byte code line by line and execute it.
+
+## What is JIT(Just-In-Time) compiler?
+-When JIT compiler invokes it reads the entire code and exclude the redundant code and then send it to Interpreter.
+JIT compiler invocation depends onnthe coding and type of JIT compiler used.
+
+## JAVA is platform(OS)-independent.
+-If we write the code in Windows ,can use the same code in Linux or IOS.Which is not possible in C or C++.
+
+
 ## Encapsulation
 <li>It means hiding some sensitive data.</li>
 
