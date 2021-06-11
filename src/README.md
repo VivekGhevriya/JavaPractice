@@ -255,7 +255,7 @@ When we perform inheritance means by using extends keyword
 
 
 ````Java
-    Class A{
+    class A{
      }
     Class B extends A{
     }
@@ -280,9 +280,9 @@ this will affect on Class b as well.
  
 
 ```Java
-    Class Engine{
-    }
-    Class Car{
+    class Engine{
+    };
+    class Car{
         String modelName;
        Engine e= new Engine()
     }
@@ -375,6 +375,9 @@ Method overriding can be achieved through extends the Abstract class.
 <li>It's used to achieve Abstraction</li>
 <li>It's support multiple inheritance</li>
 <li>Helped to achieve loose coupling</li>
+<li>we can have a class and interface inside of the interface.</li>
+<li>All the variable inside interface is static and final.</li>
+<li>Static method can also declare inside the interface.</li>
 
         public interface InterfacePractice {
 
@@ -401,5 +404,124 @@ Why Interface is Public?
 ==>We can not create object of the interface so it must be inheritated to do that it must be public.
 
 <li>When we inhertated class and interface same time than both will be Superclass</li>
+
+
+###  Polymorphism in Interface
+
+public class Run implements IEat,IPlay{
+@Override
+public void eat() {
+System.out.println("Eating");
+
+    }
+    @Override
+    public void play() {
+        System.out.println("Playing");
+    }
+    public static void main(String[] args) {
+        IEat eat = new Run();
+        eat.eat();
+        IPlay pl =new Run();
+    }
+
+<li>We can assign interface to a class object which is implemnting interface</li>
+Here IEat and IPlay are interface which are implement by Run class but we can only access
+method which are declare inside the particular interface.
+
+###Difference b/w Abstract and Interface.
+
+###All variable inside interfae are Static and final while in Abstract class we canhave  any type of instance variable.
+
+## Functional Interface
+
+<li>When we have only one abstract method inside of the interface called Functional Interface</li>
+But if we add one more abstract method then it is not a Functional Interface.
+
+We can create a object of the interface with "Anonymous class".Where we can implement body.
+
+
+        interface IPlay {
+    void play  ();
+    }
+
+        class work{
+        public static void main(String[] args) {
+        IPlay play =new IPlay() {
+        @Override
+        public void play() {
+        System.out.println("Playing");
+        }
+        }; play.play();
+         }
+        }
+
+
+### In JAVA 8 we can use "LAMBDA EXPPRESSION" to achieve abstract method of the interface.
+
+        @FunctionalInterface
+public interface run {
+void runs();
+
+    default void eat(){
+        System.out.println("Eating");
+    }
+    }
+    
+    class test{
+    public static void main(String[] args) {
+    run r =()-> System.out.println("Lambda");
+    r.runs();
+    }
+    }
+
+## ()-> {....}; Lambda expression
+
+<li>We don't have to specify the modifier ,return type and name of the method.</li>
+<li>Type of the lambda expre is the interface which has a method.</li>
+
+## Method Reference
+
+When we have same arguments and return type and static in class and interface and we want to output form the class method in lambda expression we can use
+method reference.
+
+```interface run {
+    int runs(int x,int y);
+
+    default void eat(){
+        System.out.println("Eating");
+    }
+    }
+
+class test{
+
+    public static int add(int a,int b){return a+b;};
+    public static void main(String[] args) {
+        run r = test::add;//Method reference
+        System.out.println(r.runs(2,3));
+    }
+```
+
+## ERROR and EXCEPTION
+
+###Error
+-Occurs because of lack of System resources.
+EX. OutOfMemory , StackOverFlow,HeapOverFlow,Processor
+
+-We cannot handle this kind of errors.
+
+-It's a run-time error.
+
+### Exception
+
+-occurs because of program
+
+-can be handled 
+
+mainly two type of Exception.
+
+1.Checked(Compiled or IException)-When compiler cannot able to compile the file and
+becuase exception its Checked excepetion.
+
+2.Unchecked(Run-time)-It happens during run-time(2/0)
 
 
