@@ -1,21 +1,21 @@
 ## What is Programming?
--It is a set of instruction,which is written in various languages,which tell machine to perform a specific task.
+- It is a set of instruction,which is written in various languages,which tell machine to perform a specific task.
 
 ## JAVA
--It is a high-level,Object-Oriented,class-based programming language.
+- It is a high-level,Object-Oriented,class-based programming language.
 
 ## What is High-level programming language?
--A language easy to understand for programmer but not for machine it requires to comverts into machine understable language.
+- A language easy to understand for programmer but not for machine it requires to comverts into machine understable language.
 Machine only understand binary(0's and 1's).
 
 ## How to coverts high level to binary code?
--A programme which converts Source code into MACHINE CODE.It's called Compiler or interpreter.
+- A programme which converts Source code into MACHINE CODE.It's called Compiler or interpreter.
 
-###Compiler
--It converts the entire code at once and execute and it is faster than interpreter.
+##Compiler
+- It converts the entire code at once and execute and it is faster than interpreter.
 
 ### Interpreter
--It reads code line by line and execute it.it is slower.
+- It reads code line by line and execute it.it is slower.
 
 ##  How JAVA is compiled and interpreted language?
 -It first converts(by compiler) java file(ABC.java) into byte code (ABC.class) and then interpreter reads byte code line by line and execute it.
@@ -28,8 +28,288 @@ JIT compiler invocation depends onnthe coding and type of JIT compiler used.
 -If we write the code in Windows ,can use the same code in Linux or IOS.Which is not possible in C or C++.
 
 
+----
+## Comments in JAVA
+- // -> For single line
+- /*
+  
+  */ -> For multiline comments.
+
+## Variable
+- Variable are containers to store the data.
+
+## Declaring Variable in JAVA
+`DATA-TYPE VARIABLENAME = value`
+
+### Rules to write the variable names
+1. Names can only contains Lettrs,digits,Underescore and $.
+
+2. Names should start with Lowecase and cannot contains whitespace.
+   
+3. can start with $ or _.
+
+4. Cannot use RESERVED WORDS(Final,Absrtact,This,Super,Math..etc)
+
+## Data Types
+1. Primitive data types
+
+2.Object Data types
+
+###Primitive data type
+-Predefined data type.
+-Stored in stack memory.
+-int,float,double,char,short,long,boolean,byte
+
+### Object Data type
+- User define
+- Refernce variable in stack but original object sore in heap
+- String,Classes,Interface
+- Intance of the class.(String is class)
+- can use the method of this data type(String.length).
+
+
+##Operators
+###Arithmetic Oper
+1. "+"
+
+2. "-"
+    
+3. "/"
+
+4. %
+
+
+
+### Bitwise Oper
+
+1. && ->END
+
+2. || ->OR
+
+### Comparision Oper
+
+1. == Equal to
+
+2. != Not Euqal to
+
+3. > Greater than
+   
+4. < Less than
+
+5. >= Greater than and equal
+   
+6. <= Less than and euqual
+
+### Increment and Decrement
+
+####++x  -Pre-increment(First increment value then assign) 
+
+####x++ -Post-increment(First assign  value and then increase it)
+
+
+## Condtional statement
+- When we have to check for any condition for true or false we can use 
+
+### IF....ELSE  block
+
+- the output will be boolean(True/False)
+
+```java
+    int x =5
+    if(x==5){
+        System.out.print("In if block")
+        }else
+            System.out.print("In else block")
+```
+- We can add nested if...else to check multiple logics.
+
+- any logical operator can be used with if..else.
+```java
+        if(){
+        }else if(){
+        }else if(){
+        }else{
+        }
+```
+- It is recommended to nested upto two level to avoid complexity.
+
+## Swtich...Case
+
+- To select out of many.
+
+```java
+    switch(expression){
+    case x :
+        break;
+    case x2 :
+        break;
+        default:  
+        }
+```
+-   After every case need to mention break keyword to break the loop or else it will continue
+to execute the code.
+ -  Default for none of the case pass the condition.
+-   Continue if want to exceute the code continue.
+
+##Loop
+##DE_ROUTE
+
+
+
+##OOP(Object-Oriented Programming)
+- Means everything related to Object.ie Data Representation and Method Calling
+- Also follow the OOP concepts(Encapsulation,Inheritance,Polymorphism,Abstraction)
+
+### JAVA is not pure OOP language.
+- As we have primitive data type (int,float,boolean),those are non-object type.
+- We don't have to create an object to use the method (ie. "+" can be used without creating object).
+- STATIC keyword. means we don't have to create an object to use the STATIC method or variable.
+
+## Class
+- User created blue-print which describe the behaviour and data of the objects.
+- By creating class we are creating new data-type,which we can access by object.
+- Class contains method and variable it's called members.
+- It's basic of OOP.
+
+
+## Object
+- It is instance of the class.
+
+### How to create CLASS and OBJECT
+
+public class Main{
+
+----}
+
+public(Access Modifier)
+Class keyword and name of the class start with Capital letter.
+
+
+Main m1 = new Main()
+
+here Object m1 and  <b>NEW</b> keyword is for memory allocation inside Heap during run time.
+Main() is the constructor.
+
+## Constructor
+- Used to initialize the object.
+- it is kind of method with 
+
+Constructor is a special method which can be invoked when we create object of the class.
+When we create a class Java compiler will automatically create a constructor with default value
+It must have the same name as a class name. 
+We can have more than one constructor inside one class but have to make sure the parameter must not be the same.
+  
+## This keyword
+
+
+
+## STATIC keyword
+
+- Any static members inside of the class can be access without creating instance of the class.
+  
+```java
+    class Demo{
+    static int a;
+    static void counter(int x){
+        System.out.println(x++);
+    }
+    class Test{
+        public static void main(String[] args) {
+            Demo.a;
+            Demo.counter();
+        }
+    }
+}
+```
+
+- Static members can be access by adding class name infront.
+
+## Array
+ - To store multiple values in a single variable instead creating multiple variables.
+-  Can store the object,and Array inside array.
+
+###How to declare an array.
+
+```java
+     int [] arr1= new int[]{2,55,6};
+    int [] arr1 =new int[3];
+    int[] arr1= {1,2,31};
+    int arr1[]=new int[4];
+    
+    //Array inside array
+        int [] arr1= new int[]{2,55,6};
+        int [] arr2 =new int[]{2,555,6};
+
+        int [][] d = {
+        arr1,arr2
+        };
+```
+
+##For-each loop for array
+    for (int k:arr1
+             ) {
+            System.out.println(k);
+
+        }
+
+## Spread Operator(...)/variable length Arguments
+- When we are not sure about how many arguments will pass we can use spread oper.
+
+  public int add(int ... n);
+  ){
+  int sum =0;
+  for (int k:n
+  ) { return sum=sum+k
+
+            }
+- we pass n number of arguments to add(). since we passing multiple arguments 
+it is array type so we can use forEach loop.
+  
+## Array Methods
+###Arrays.euqals()
+- comapre two arays
+
+            Arrays.equals(arr1,arr2)
+
+
+### Binary Search
+
+```java/Binary search Task
+// Find value 8 from the given array
+int[] x ={1,2,3,4,5,6,7,8,9,10};
+int find =7;
+int first =0;
+int last =x.length-1;
+int middle =first+last/2;
+while(first<=last) {
+if (x[middle] == find) {
+System.out.println("find"+ x[middle]);
+break;
+} else if (x[middle] < find) {
+
+              first = middle + 1;
+          } else {
+              last = middle - 1;
+          }
+          middle=first+last/2;
+      }
+```
+
+- To find binary number from the array.
+
+- fastet way is to use method
+```java
+int[] x ={1,2,3,4,56,7,89,2,8};
+        Arrays.sort(x);
+        System.out.println(Arrays.binarySearch(x,8));
+        
+```
+
+##String
+
+
 ## Encapsulation
-<li>It means hiding some sensitive data.</li>
+<li>It means hiding some sensitive data.or Wrapping members in single unit</li>
 
 <li>To Achieve this we must declare class,variable and attributes as a <b>Private</b>
      Modifier,which means only same class will have access to all the class members.</li>
@@ -45,7 +325,7 @@ JIT compiler invocation depends onnthe coding and type of JIT compiler used.
 <br>
 
 <li><b><i>GET and SET</i></b> are special kind of method which we can use to control the access of other programmer.</li>
-<li>Get will return the variable value while SET will not return any value it's allow to set the new value.</li>
+<li>Get will return the variable value while SET will allow to set the value.</li>
 
 
 
@@ -70,6 +350,15 @@ proper manner, such as changing the value of a variable within a specified range
 <h5>getter and setters are also called as accessor and mutator</h5>
 
 ## Getters and Setters in Array and List and use of clone()
+
+- Since Array are object type and variable refer the object any class can change the value so
+we have to copy the array in set() and get() method
+
+  public void setScore(int[] scr) {
+
+        this.score = new int[scr.length-1];
+        System.arraycopy(scr,0,this.score,0,scr.length-1);
+    }
 
 
 ## Enumerations(enum)
@@ -182,14 +471,14 @@ To invoke the SuperClass Constructor inside of the Subclass we can use the
 
 ## Packages
 
-Packages is a collection of similar type of java entities which can be classes , subclass or interface..etc
+- Packages is a collection of similar type of java entities which can be classes , subclass or interface..etc
 
 
-It gives unique name of the class,we can't have same name class in same package.
+- It gives unique name of the class,we can't have same name class in same package.
 
-Package name will be in small-letters.
+- Package name will be in small-letters.
 
-Package name should be reverse order of the public identity(Domain name).
+- Package name should be reverse order of the public identity(Domain name).
   
     //ibm.com is the public identity so package name could ne 
     com.ibm
@@ -212,9 +501,10 @@ Package name should be reverse order of the public identity(Domain name).
 1.User-Defined
 2.Built-in(java.util,java.lan,java.io)
 
-We can sub-package in Java and will be treated as  another package.
+- We can sub-package in Java and will be treated as  another package.
+- can import another package by import packagename.classname
 
-Now we can learn about access modifier
+- Now we can learn about access modifier
 
 <table >
 <tr style="background-color:grey">
@@ -276,6 +566,16 @@ Subclass Reference.
         f1.eat();
     }
     }
+## Inheritance
+- when one class acquired properties of another class called as Inhertiance.
+- Where class inheriting properties called Sub-class and from class called Super-class.
+- need to use Extends keyword to inherit members.
+- one class cannot extends multiple class same time.
+```java
+  class Super{----}
+ class Sub extends Super{---}
+```
+
 
 ## Relation b/w Classes
 
@@ -333,7 +633,7 @@ this will affect on Class b as well.
 <li>Same Arguments,Same type and same argument sequence</li>
 <li>Class follow inheritance (IS-A relationship)</li>
 
-it's called Method Overloading.
+it's called Method Overriding.
 
 <li>However,we can have different return type in child class,but retun type in child class can be same or 
     sub-type of Superclass return type .This phenomenon is known 
@@ -375,7 +675,7 @@ class A for b1 we need to perform object casting.
 
 ## Abstraction
 
-<li>Abstraction is hiding internal implementaion and showing only setup service that are we offering</li>
+<li>Abstraction is hiding internal implementation and showing only setup service that are we offering</li>
 
 <li>Ex.In Car ,we are only shown to break paddle but the internal strucure in not visible.</li>
 
